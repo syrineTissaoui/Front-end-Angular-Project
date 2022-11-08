@@ -1,0 +1,42 @@
+
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>New Commande</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#"routerLink="/commande/list" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="table-content">
+        <div class="form-group p-10 row">
+          <div class="col-sm-3">
+            <label class="p-t-b-10">Produit<span class="requiredStar">*</span></label>
+          </div>
+          <div class="col-sm-9">
+            <label for="produit">Produit</label>
+            <select
+              formControlName="produit"
+              id="produit"
+              type="string"
+              class="form-control">
+                <option value="">--Please choose Produit--</option>
+              <option *ngFor="let cat of produits?.produitData" value="{{cat._id}}">{{ cat.Nom }}</option>
+            </select>
+          </div>
+        </div>
+        </div>
+
+        <div class="table-footer">
+          <button class="btn btn-success" type="submit" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

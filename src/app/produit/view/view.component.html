@@ -1,0 +1,88 @@
+<!--<div class="container">-->
+<!--  <h1>View Post</h1>-->
+
+<!--  <a href="#" routerLink="/produit/index" class="btn btn-primary">Back</a>-->
+
+
+<!--  <div>-->
+<!--    <strong>Nom:</strong>-->
+<!--    <p>{{ produit.Nom }}</p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <strong>Prix:</strong>-->
+<!--    <p>{{ produit.Prix }}</p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <strong>Image:</strong>-->
+<!--    <p>{{ produit.Image }}</p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <strong>Categorie:</strong>-->
+<!--    <p>{{ produit.categorie }}</p>-->
+<!--  </div>-->
+
+<!--</div>-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>View Product</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/produit/index" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content">
+        <tbody>
+        <tr>
+          <td>
+            <label><b>Nom</b></label>
+          </td>
+          <td>
+            <span>{{ produits.Nom }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><b>Prix</b></label>
+          </td>
+          <td>
+            <span>{{ produits.Prix }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><b>Image</b></label>
+          </td>
+          <td>
+            <span><img
+            class="image"
+            src="http://localhost:3000/produit/file/{{ produits.Image }}"
+            alt=""
+            height="100px"
+            width="100px"
+            style="border: 1px solid black"/></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><b>Categorie</b></label>
+          </td>
+          <td>
+            <span>{{ produits.categorie.NomCat }}</span>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

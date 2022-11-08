@@ -1,0 +1,201 @@
+<!--<div class="container">-->
+<!--  <h1>Create New Ptoduit</h1>-->
+
+<!--  <a href="#" routerLink="/produit/index" class="btn btn-primary">Back</a>-->
+
+<!--  <form [formGroup]="form" (ngSubmit)="submit()">-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="Nom">Nom:</label>-->
+<!--      <input-->
+<!--        formControlName="Nom"-->
+<!--        id="Nom"-->
+<!--        type="text"-->
+<!--        class="form-control">-->
+<!--      <div *ngIf="f['Nom'].touched && f['Nom'].invalid" class="alert alert-danger">-->
+<!--        <div *ngIf="f['Nom'].errors && f['Nom'].errors['required']">Nom is required.</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="Prix">Prix</label>-->
+<!--      <input-->
+<!--        formControlName="Prix"-->
+<!--        id="Prix"-->
+<!--        type="number"-->
+<!--        class="form-control">-->
+
+<!--      <div *ngIf="f['Prix'].touched && f['Prix'].invalid" class="alert alert-danger">-->
+<!--        <div *ngIf="f['Prix'].errors && f['Prix'].errors['required']">Prix is required.</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="Image">Image</label>-->
+<!--      <input-->
+<!--        formControlName="Image"-->
+<!--        id="Image"-->
+<!--        type="file"-->
+<!--        class="form-control">-->
+
+<!--      <div *ngIf="f['Image'].touched && f['Image'].invalid" class="alert alert-danger">-->
+<!--        <div *ngIf="f['Image'].errors && f['Image'].errors['required']">Image is required.</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="DateExp">DateExp</label>-->
+<!--      <input-->
+<!--        formControlName="DateExp"-->
+<!--        id="DateExp"-->
+<!--        type="date"-->
+<!--        class="form-control">-->
+
+<!--      <div *ngIf="f['DateExp'].touched && f['DateExp'].invalid" class="alert alert-danger">-->
+<!--        <div *ngIf="f['DateExp'].errors && f['DateExp'].errors['required']">Image is required.</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="Categorie">Categorie</label>-->
+<!--      <select-->
+<!--        formControlName="Categorie"-->
+<!--        id="Categorie"-->
+<!--        type="string"-->
+<!--        class="form-control">-->
+
+<!--        <option selected >&#45;&#45;Please choose Categorie&#45;&#45;</option>-->
+
+<!--        <option *ngFor="let cat of categories?.categorieData" value="{{cat._id}}}">{{ cat.NomCat }}</option>-->
+<!--      </select>-->
+
+
+<!--    </div>-->
+
+<!--    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>-->
+<!--  </form>-->
+<!--</div>-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>New Produit</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#"routerLink="/produit/index" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Nom" class="p-t-b-10">Nom<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+
+                <label for="Nom">Nom</label>
+                <input
+                  formControlName="Nom"
+                  id="Nom"
+                  type="text"
+                  class="form-control" >
+
+                <div *ngIf="f['Nom'].touched && f['Nom'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['Nom'].errors && f['Nom'].errors['required']">Nom is required.</div>
+                </div>
+
+
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Image" class="p-t-b-10">Image<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+
+              <div class="form-group">
+                <label for="Image">Image</label>
+                <input
+                  formControlName="Image"
+                  id="Image"
+                  type="file"
+                  class="form-control"   accept="image/x-png,image/gif,image/jpeg"
+                  ng2FileSelect [uploader]="uploader">
+
+                <div *ngIf="f['Image'].touched && f['Image'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['Image'].errors && f['Image'].errors['required']">Image is required.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="DateExp" class="p-t-b-10">DateExp<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+
+              <div class="form-group">
+                <label for="DateExp">DateExp</label>
+                <input
+                  formControlName="DateExp"
+                  id="DateExp"
+                  type="date"
+                  class="form-control" >
+
+                <div *ngIf="f['DateExp'].touched && f['DateExp'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['DateExp'].errors && f['DateExp'].errors['required']">Date is required.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Prix<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <div class="form-group">
+              <label for="Prix">Prix</label>
+
+               <input
+                formControlName="Prix"
+                id="Prix"
+                type="number"
+                class="form-control" >
+
+              <div *ngIf="f['Prix'].touched && f['Prix'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Prix'].errors && f['Prix'].errors['required']">Prix is required.</div>
+              </div>
+              </div>
+              </div>
+            </div>
+
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Categorie<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <label for="categorie">Categorie</label>
+              <select
+                formControlName="categorie"
+                id="categorie"
+                type="string"
+                class="form-control">
+
+                <option value="">--Please choose Categorie--</option>
+
+                <option *ngFor="let cat of categories?.categorieData" value="{{cat._id}}">{{ cat.NomCat }}</option>
+              </select>
+            </div>
+            </div>
+
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" type="submit" [disabled]="!uploader.getNotUploadedItems().length">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

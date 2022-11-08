@@ -1,0 +1,47 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Update Product</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/commande/list" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Etat<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <select
+                formControlName="etat"
+                id="etat"
+                type="string"
+                class="form-control">
+
+                <option value="">--Please choose Etat--</option>
+
+
+                  <option value="En cours de traitement">En cours de traitement</option>
+                  <option value="Traitée">Traitée</option>
+
+
+
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-footer">
+          <button class="btn btn-success" type="submit" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
